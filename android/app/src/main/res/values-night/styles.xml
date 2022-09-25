@@ -6,3 +6,5 @@
         <item name="android:navigationBarColor">#242526</item>   
     </style>
 </resources>
+
+<!-- refre https://brainsandbeards.com/blog/how-to-add-a-dark-mode-splash-screen-to-a-react-native-app -->
