@@ -12,7 +12,10 @@ const Routing = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Home">
-                <Stack.Screen name="Home" component={Home} />
+                
+                <Stack.Screen
+                options={{headerShown: false}} 
+                name="Home" component={Home} />
                 <Stack.Screen name="About" component={About} />
                 <Stack.Screen name="Profile" component={Profile} />
             </Stack.Navigator>

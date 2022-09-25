@@ -1,25 +1,38 @@
 import React from 'react';
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../context/theme';
 
 const Home = () => {
     const style = useTheme();
     const styles = StyleSheet.create({
         wrapper: {
+            height: '100%',
             justifyContent: 'center',
-            backgroundColor: style.color.primary
+            backgroundColor: style.themeType.dark ? style.color.dark : style.color.primary,
         },
         text: {
-            fontSize: 20,
-            color: '#fff',
+            fontSize: 18,
         },
-        scroll:{
-            backgroundColor: 'red'
+        scroll: {
+            padding: style.space.x
+        },
+        statusBarBg: {
+            backgroundColor: 'red'    
         }
     })
 
+    const backgroundStyle = {
+        backgroundColor: style.themeType.dark ? style.color.dark : style.color.primary,
+    };
+    
     return (
-        <View style={styles.wrapper}>
+        <SafeAreaView style={styles.wrapper}>
+            <StatusBar
+                barStyle={style.themeType.dark ? 'light-content' : 'dark-content'}
+                backgroundColor={backgroundStyle.backgroundColor}
+            />
+
             <ScrollView style={styles.scroll}>
                 <Text style={styles.text}>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?
@@ -31,9 +44,10 @@ const Home = () => {
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?
+                    wewew
                 </Text>
             </ScrollView>
-        </View>
+        </SafeAreaView>
     );
 };
 
