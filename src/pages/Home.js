@@ -8,32 +8,19 @@ const Home = () => {
     const styles = StyleSheet.create({
         wrapper: {
             height: '100%',
+            padding: style.space.x,
             justifyContent: 'center',
             backgroundColor: style.themeType.dark ? style.color.dark : style.color.primary,
         },
         text: {
             fontSize: 18,
+            color: style.color.white
         },
-        scroll: {
-            padding: style.space.x
-        },
-        statusBarBg: {
-            backgroundColor: 'red'    
-        }
     })
 
-    const backgroundStyle = {
-        backgroundColor: style.themeType.dark ? style.color.dark : style.color.primary,
-    };
-    
     return (
-        <SafeAreaView style={styles.wrapper}>
-            <StatusBar
-                barStyle={style.themeType.dark ? 'light-content' : 'dark-content'}
-                backgroundColor={backgroundStyle.backgroundColor}
-            />
-
-            <ScrollView style={styles.scroll}>
+        <ScrollView>
+            <View style={styles.wrapper}>
                 <Text style={styles.text}>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?
@@ -46,8 +33,8 @@ const Home = () => {
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?
                     wewew
                 </Text>
-            </ScrollView>
-        </SafeAreaView>
+            </View>
+        </ScrollView>
     );
 };
 
