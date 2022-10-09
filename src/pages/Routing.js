@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Profile from './Profile';
 import About from './About';
 import Home from './Home';
+import Layout from './Layout';
 import { useTheme } from '../context/theme';
 
 const Stack = createNativeStackNavigator();
@@ -22,11 +23,12 @@ const Routing = () => {
                 // barStyle={style.themeType.dark ? 'light-content' : 'dark-content'}
                 backgroundColor={backgroundStyle.backgroundColor}
             />
-            <Stack.Navigator initialRouteName="Home">
+            <Stack.Navigator initialRouteName="Layout">
                 <Stack.Screen
                     options={{ headerShown: false }}
                     name="Home" component={Home} />
                 <Stack.Screen name="About" component={About} />
+                <Stack.Screen name="Layout" options={{ headerShown: false }} component={Layout} />
                 <Stack.Screen name="Profile" component={Profile} />
             </Stack.Navigator>
         </NavigationContainer>

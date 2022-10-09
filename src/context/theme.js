@@ -1,9 +1,11 @@
 import React, {createContext, useContext} from 'react';
 import {useColorScheme} from 'react-native';
+import { useWindowDimensions } from 'react-native';
 
 const themeContext = createContext();
 
 export default function ThemeProvider({children}){
+    const { height, width } = useWindowDimensions();
     const isDarkMode = useColorScheme() === 'dark';
     const value = {
         color : {
@@ -16,6 +18,10 @@ export default function ThemeProvider({children}){
         space : {
             x: 16,
             y: 16,
+        },
+        size: {
+            width: width,
+            height: height,
         },
         themeType: {
             dark: isDarkMode,
